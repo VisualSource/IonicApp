@@ -1,0 +1,58 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      <header id="app-header">
+        <div class="center">
+          <ion-button (click)="lastPage()" color="success">Last</ion-button>
+          <app-tracker pages={{pages}} [currentPage]=activePage></app-tracker>
+          <ion-button color="success" (click)="nextPage()">Next</ion-button>
+          <ion-button color="success" (click)="openTOC()">TOC</ion-button>
+        </div>
+      </header>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Book Name</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-slides pager="false" scrollbar="true" [options]="slideOpts" (ionSlideDidChange)="slideChanged()" (ionSlidesDidLoad)="slidesDidLoad()" >
+    <ion-slide>
+      <app-cover></app-cover>
+    </ion-slide>
+    <ion-slide>
+       <app-toc [viewPage]="setSlide"></app-toc>
+    </ion-slide>
+    <ion-slide class="scrollable">
+      <app-content-page isChapterHeader="true" chapterNumber="1" chapterName="tortor vitae"></app-content-page>
+    </ion-slide>
+    <ion-slide class="scrollable">
+      <app-content-page></app-content-page>
+    </ion-slide>
+    <ion-slide class="scrollable">
+      <app-content-page hasImg="true" img="https://via.placeholder.com/500" alt="placeholder"></app-content-page>
+    </ion-slide>
+    <ion-slide class="scrollable">
+      <app-content-page chapterName="in hac" isChapterHeader="true" chapterNumber="2" hasImg="true" img="https://via.placeholder.com/500" alt="placeholder"></app-content-page>
+    </ion-slide>
+    <ion-slide class="scrollable">
+      <app-content-page></app-content-page>
+    </ion-slide>
+    <ion-slide class="scrollable">
+      <app-content-page></app-content-page>
+    </ion-slide>
+    <ion-slide class="scrollable">
+      <app-content-page hasImg="true" img="https://via.placeholder.com/500" alt="placeholder"></app-content-page>
+    </ion-slide>
+    <ion-slide class="scrollable"> 
+      <app-content-page chapterName="enim sit" isChapterHeader="true" chapterNumber="3"></app-content-page>
+    </ion-slide>
+    <ion-slide class="scrollable">
+      <app-content-page></app-content-page>
+    </ion-slide>
+  </ion-slides>
+</ion-content>

@@ -1,0 +1,48 @@
+ion-slides, app-content-page, app-toc, app-cover {
+  height: 100%;
+}
+app-content-page {
+  width: 100%;
+}
+
+@media screen and (max-width : 320px) {
+  ion-slide.scrollable {
+      overflow-y: scroll;
+  }
+}
+@media screen and (max-width : 768px) {
+  ion-slide.scrollable {
+      overflow-y: scroll;
+  }
+}
+@media screen and (max-width: 1024px) {
+  ion-slide.scrollable {
+    overflow-y: scroll;
+  }
+}
+@media screen and (max-width: 1280px) {
+  ion-slide.scrollable {
+    overflow-y: scroll;
+  }
+}
+
+header#app-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  > .left, .right {
+    flex: 1;
+  }
+  > .center {
+    display: flex;
+    align-items: center;
+    > ion-button:first-child {
+      margin-right: 1em;
+    }
+    > ion-button:last-child, ion-button:nth-child(3) {
+      margin-left: 1em;
+    }
+  }
+}
